@@ -1,0 +1,12 @@
+@import './main.css';
+
+div > button {
+    margin: 1rem 1.5rem;
+}
+#viewersVotes {
+    width: 3rem;
+    text-align: center;
+}
+.hide {
+    display: none;
+}

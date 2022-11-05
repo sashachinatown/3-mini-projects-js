@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Jura', sans-serif;
+}
+
+li {
+    padding-left: .5rem;
+    font-weight: bold;
+}
+
+a {
+    padding: .5rem 1rem;
+    margin: .5rem auto;
+    
+}
+
+.active {
+    /* list-style: disc; */
+    background: #fff;
+    color: #4c1d95;
+    
+}

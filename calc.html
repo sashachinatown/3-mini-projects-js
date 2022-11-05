@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link href="./src/calc.css" rel="stylesheet">
+    <link rel="icon" href="/assets/logo.png" type="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="flex w-full justify-center mt-36">
+        <h1 class="pt-7 font-semibold text-4xl mx-auto">Калькулятор</h1>
+    </header>
+    <form action="" class="flex flex-col w-full items-center justify-center mt-12">
+        <input type="number" placeholder="Введіть дані для обчислення"
+        class=" placeholder:text-gray-500 block bg-white w-[320px] border-2 border-gray-300 rounded-xl py-2 px-6 text-lg" name="search">
+        <span class="mt-1 italic text-sm">(Введіть спочатку перше число, потім потрібну операцію і наступне число)</span>
+        <span id="progress" class="mt-3 text-[24px]">...</span>
+        <div class="flex flex-row mt-6" id="operations">
+            <button type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">+</button>
+            <button type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">-</button>
+            <button type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">x</button>
+            <button type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">:</button>
+            <button type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">%</button>
+        </div>
+        <div class="flex flex-row mt-4">
+            <button id="calc" type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">Порахувати</button>
+            <button id="clear" type="submit" class="w-fit h-fit py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">Очистити</button>
+        </div>
+    </form>
+
+    <script src="./src/calc.js"></script>
+</body>
+</html>

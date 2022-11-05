@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хто Хоче Стати Мільйонером?</title>
+    <link href="./src/mil.css" rel="stylesheet">
+    <link rel="icon" href="/assets/logo.svg" type="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white bg-gradient-to-br from-violet-900 to-black bg-cover h-fit">
+    <header class="mt-5 mx-10 text-center flex flex-col justify-start items-center">
+        <h1 class="pt-7 font-semibold text-4xl">Хто Хоче Стати Мільйонером?</h1>
+        
+    </header>
+    <main class="flex flex-wrap md:flex-row flex-col-reverse items-center justify-center md:mt-0 mt-10">
+        <div class="flex md:flex-col flex-row items-center md:justify-between justify-center md:ml-24">
+            <a id="fifty" class="hover:bg-amber-400 hover:text-violet-900 cursor-pointer">50:50</a>
+            <a id="viewers" class="hover:bg-amber-400 hover:text-violet-900 cursor-pointer">Допомога глядачів</a>
+            <a id="friend" class="hover:bg-amber-400 hover:text-violet-900 cursor-pointer">Дзвінок другу</a>
+        </div>
+        <img src="./assets/logo.svg" alt="logo" class="max-w-[370px] max-h-[370px] sm:block hidden">
+        <ul class="md:ml-36 md:mr-12">
+            <li class="text-amber-400">1 000 000</li>
+            <li>500 000</li>
+            <li>250 000</li>
+            <li>125 000</li>
+            <li>64 000</li>
+            <li class="text-amber-400">32 000</li>
+            <li>16 000</li>
+            <li>8 000</li>
+            <li>4 000</li>
+            <li>2 000</li>
+            <li class="text-amber-400">1 000</li>
+            <li>500</li>
+            <li>300</li> 
+            <li>200</li> 
+            <li class="active">100</li> 
+        </ul>
+    </main>
+    <section class="mb-16 mt-3">
+        <h2 class="font-medium text-xl text-center">Питання</h2>
+        <div class="flex flex-wrap flex-row items-center justify-center mt-5">
+            <span id="viewersVotes" class="hide">10%</span>
+            <button 
+                type="button" 
+                class="py-3 px-6 min-w-[440px] font-medium text-xl border-2 rounded-xl hover:text-violet-900 hover:bg-white">
+                    Відповідь 1
+            </button>
+            <button 
+                type="button" 
+                class="py-3 px-6 min-w-[440px] font-medium text-xl border-2 rounded-xl hover:text-violet-900 hover:bg-white">
+                    Відповідь 2
+            </button>
+            <span id="viewersVotes" class="hide">50%</span>
+        </div>
+        <div class="flex flex-wrap flex-row items-center justify-center">
+            <span id="viewersVotes" class="hide">5%</span>
+            <button 
+                type="button" 
+                class="py-3 px-6 min-w-[440px] font-medium text-xl border-2 rounded-xl hover:text-violet-900 hover:bg-white">
+                    Відповідь 1
+            </button>
+            <button 
+                type="button" 
+                class="py-3 px-6 min-w-[440px] font-medium text-xl border-2 rounded-xl hover:text-violet-900 hover:bg-white">
+                    Відповідь 2
+            </button>
+            <span id="viewersVotes" class="hide">35%</span>
+        </div>
+    </section>
+    <audio autoplay loop>
+        <source src="./assets/background.mp3" type="audio/mp3">
+    </audio>
+    <script src="./src/mil.js"></script>
+</body>
+</html>
