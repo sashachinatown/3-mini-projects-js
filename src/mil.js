@@ -176,7 +176,7 @@ let fiftyCounter = 0,
 
 
 answerBtns.forEach((answer, index) => {
-    answer.addEventListener('click', (event) => checkAnswer(event, index))
+    answer.addEventListener('click', (event) => checkAnswer(event, index));
 });
 
 fiftyBtn.addEventListener('click', () => setTimeout(fiftyFifty, 500));
@@ -189,8 +189,8 @@ function checkAnswer(event, index) {
 
     answerBtns.forEach((answer) => {
         answer.classList.remove('hover:bg-white', 'bg-amber-400', 'hover:text-violet-900');
+        answer.disabled = true; 
     });
-    
 
     if ([...answerBtns].indexOf(event.target) !== questions[level].correct) {
         reward[level].classList.remove('active');
@@ -199,7 +199,6 @@ function checkAnswer(event, index) {
         setTimeout(showLossMessage, 2000);
         return;
     }
-        level++;
         if (level < 15) {
             setTimeout(nextQuestion, 2000);
         } else {
@@ -208,14 +207,16 @@ function checkAnswer(event, index) {
 }
 
 function nextQuestion() {
+    level++;
     questionText.textContent = questions[level].question;
     answerBtns.forEach((answer, index) => {
         answer.textContent = questions[level].content[index];
+        answer.disabled = false; 
     });
     reward[level-1].classList.remove('active');
     reward[level].classList.add('active');
-
     clearStyles();
+    answer.disabled = true; 
 }
 
 function clearStyles() {
