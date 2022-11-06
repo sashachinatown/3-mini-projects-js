@@ -33,14 +33,12 @@ let values = [];
 
 operationBtns.forEach(btn => btn.addEventListener('click', (event) => {
     event.preventDefault();
-    if (!operation && value) {
-        values.push(+value);
-        value = '';
-        input.value = value;
-        input.placeholder = 'Введіть другий аргумент';
-        operation = operations[event.target.textContent];
-        progress.textContent = `${values[0]} ${event.target.textContent}`;
-    }
+    values.push(+value);
+    value = '';
+    input.value = value;
+    input.placeholder = 'Введіть другий аргумент';
+    operation = operations[event.target.textContent];
+    progress.textContent = `${values[0]} ${event.target.textContent}`;
 }));
 
 calculateBtn.addEventListener('click', (event) => {
