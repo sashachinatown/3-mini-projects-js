@@ -199,7 +199,7 @@ function checkAnswer(event, index) {
         setTimeout(showLossMessage, 2000);
         return;
     }
-        if (level < 15) {
+        if (level < 14) {
             setTimeout(nextQuestion, 2000);
         } else {
         setTimeout(showVictoryMessage, 2000);
@@ -216,7 +216,6 @@ function nextQuestion() {
     reward[level-1].classList.remove('active');
     reward[level].classList.add('active');
     clearStyles();
-    answer.disabled = true; 
 }
 
 function clearStyles() {
@@ -261,6 +260,7 @@ function restart() {
     answerBtns.forEach(button => button.classList.toggle('hide'));
     answerBtns.forEach((answer, index) => {
         answer.textContent = questions[level].content[index];
+        answer.disabled = false; 
     });
 
     fiftyCounter = 0;

@@ -24,7 +24,7 @@ generateBtn.addEventListener('click', (event) => {
         resArr.push(currentRandom);
     }
     let result = resArr.join(', ');
-    data.value = result;
+    data.textContent = result ? result : "Дані з'являться тут";
 })
 
 
