@@ -193,9 +193,6 @@ function checkAnswer(event, index) {
     });
 
     if ([...answerBtns].indexOf(event.target) !== questions[level].correct) {
-        reward[level].classList.remove('active');
-        level = 0;
-        reward[level].classList.add('active');
         setTimeout(showLossMessage, 2000);
         return;
     }
@@ -236,6 +233,10 @@ function showLossMessage() {
     document.body.append(musicLoss);
     clearStyles();
 
+    fiftyCounter = 1;
+    viewersHelpCounter = 1;
+    friendCallsCounter = 1;
+
     questionText.classList.toggle('hide');
     answerBtns.forEach(button => button.classList.toggle('hide'));
 
@@ -244,7 +245,18 @@ function showLossMessage() {
     lossButton.classList.add('py-3', 'px-6', 'mt-6', 'w-fit', 'font-medium', 'text-xl', 'border-2', 'rounded-xl', 'hover:text-violet-900', 'hover:bg-white');
     lossWrapper.classList.add('flex', 'flex-wrap', 'flex-col', 'items-center', 'justify-center', 'mt-5', 'mb-20');
 
-    lossMessage.textContent = 'Ви програли!';
+    if (level < 4) {
+        lossMessage.textContent = 'Ви програли!';
+    } else if (level < 9) {
+        lossMessage.textContent = 'Гру завершено! Ваш виграш склав 1000 гривень.';
+    } else {
+        lossMessage.textContent = 'Гру завершено! Ваш виграш склав 32000 гривень.';
+    }
+
+    reward[level].classList.remove('active');
+    level = 0;
+    reward[level].classList.add('active');
+    
     lossButton.textContent = 'Почати заново';
 
     lossButton.addEventListener('click', restart)
@@ -270,6 +282,10 @@ function restart() {
     makeActive(fiftyBtn);
     makeActive(viewersBtn);
     makeActive(callFriendBtn);
+
+    fiftyBtn.addEventListener('click', () => setTimeout(fiftyFifty, 500));
+    viewersBtn.addEventListener('click', () => setTimeout(viewersHelp, 500));
+    callFriendBtn.addEventListener('click', () => setTimeout(callFriend, 500));
 
     let musicLoss = document.querySelector('audio');
     musicLoss.remove();

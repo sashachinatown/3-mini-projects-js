@@ -13,27 +13,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="flex w-full justify-center mt-48">
+    <header class="flex w-full justify-center mt-[10%]">
         <h1 class="pt-7 font-semibold text-4xl mx-auto">Отримати випадкове число:</h1>
     </header>
     <form action="" class="flex flex-col w-full items-center justify-center mt-12">
         <div class="flex flex-row items-center">
             <span>Кількість чисел</span>
-            <input id="amount" type="number" placeholder=""
+            <input id="amount" type="number" placeholder="" min="1" max="99"
             class=" placeholder:text-gray-500 block bg-white w-[100px] border-2 border-gray-300 rounded-xl py-2 px-6 text-lg ml-3 mr-6" name="search">
             <span>Інтервал від:</span>
-            <input id="min" type="number" placeholder=""
+            <input id="min" type="number" placeholder="" min="-1000000" max="1000000"
             class=" placeholder:text-gray-500 block bg-white w-[170px] border-2 border-gray-300 rounded-xl py-2 px-6 text-lg ml-3 mr-6" name="search">
             <span>До:</span>
-            <input id="max" type="number" placeholder=""
+            <input id="max" type="number" placeholder="" min="-1000000" max="1000000"
             class=" placeholder:text-gray-500 block bg-white w-[170px] border-2 border-gray-300 rounded-xl py-2 px-6 text-lg ml-3 mr-6" name="search">
         </div>
         <div id="data"
             class="text-center text-gray-500 block bg-white min-w-[20%] max-w-[40%] mt-6 border-2 border-gray-300 rounded-xl py-2 px-6 text-lg ml-3 mr-6" name="search">
             Дані з'являться тут
         </div>
+
+            <div class="flex flex-row mt-3">
+                <input id="uniq" type="checkbox">
+                <label for="uniq" class="ml-2">Тільки унікальні значення</label>
+            </div>
+
+            <div class="flex flex-row mt-1">
+                <input id="asc" type="checkbox">
+                <label for="asc" class="ml-2">Сортувати за зростанням</label>
+            </div>
+
             <button id="generate"
-            class="w-fit h-fit mt-12 py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">
+            class="w-fit h-fit mt-6 py-2 px-7 bg-black border-2 border-black text-white rounded-full hover:text-black hover:bg-white">
                 Сгенерувати
         </button>
 

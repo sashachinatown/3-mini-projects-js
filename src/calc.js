@@ -18,6 +18,8 @@ input.addEventListener('change', (event) => {
     value = event.target.value;
 })
 
+input.addEventListener('input', inputNumbersOnly);
+
 
 const operations = {
     '+': '+',
@@ -63,8 +65,9 @@ function calculate(arr, operation) {
         res = eval(`${arr[0]} / 100 * ${arr[1]}`);
     } else {
         res = eval(`${arr[0]} ${operation} ${arr[1]}`);
+        res === 0.30000000000000004 || res === -0.30000000000000004 ? res = res.toFixed(1) : 0;
     }
-    progress.textContent += ` ${arr[1]} = ${res}`;
+    res === Infinity || res === -Infinity ? progress.textContent = 'Error' : progress.textContent += ` ${arr[1]} = ${res}`;
     values = [];
     operation = undefined;
 }
@@ -74,4 +77,13 @@ function clear() {
     operation = undefined;
     input.value = '';
     progress.textContent = '...';
+}
+
+function inputNumbersOnly(e){
+    let allowed = '-1234567890.';
+    this.value.indexOf('-') !== this.value.lastIndexOf('-') || this.value.indexOf('-') > 0 ? this.value = this.value.slice(0, -1) : 0;
+    this.value.indexOf('.') !== this.value.lastIndexOf('.') ? this.value = this.value.slice(0, -1) : 0;
+    if (allowed.indexOf(this.value[this.value.length - 1]) === -1) {
+        this.value = this.value.slice(0, -1);
+    }
 }
